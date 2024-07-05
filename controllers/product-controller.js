@@ -50,7 +50,7 @@ productsRouter.delete('/:id', (req, res) => {
     const id = Number(req.params.id);
     const index = products.findIndex(product => product.id === id);
     if (index === -1) {
-        res.status(400).send();
+        res.status(404).send();
     }
     products.splice(index, 1);
     res.status(204).send();
